@@ -4,4 +4,10 @@
 	    wp_enqueue_style( 'divi', get_template_directory_uri() . '/style.css' );
       wp_enqueue_script( 'divi', plugin_dir_url( __FILE__ ) . 'js/scripts.js', array( 'jquery', 'divi-custom-script' ), '0.1.2', true );
 	}
-?>
+
+// override Divi's footer credits output
+function et_get_footer_credits()
+{
+  $my_content = '';
+  return $my_content;
+}
